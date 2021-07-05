@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>{% block title %}Profile{% endblock %}</h1>
+</head>
+<body>
+    {% block content %}
+    <p align="center" size="12pt">Hasil Analisis</p>
+        <table align="center">
+            <tr>
+                <td>Hasil</td>
+                <td>:</td>
+                <td>{{ y_pred }}</td>
+            </tr>
+        </table>
+                {% if y_pred == 1 %}
+                    <p align='center'>Mohon maaf, sepertinya Anda perlu ke professional terdekat untuk konsultasikan masalah yang Anda miliki</p>
+                {% else %}
+                    <p align='center'>
+                        Selamat, kondisi mental health Anda dalam keadaan baik
+                    </p>
+                {% endif %}  
+        <form action="/" align='center'>           
+            <button type="submit" class="btn btn-secondary" value="back">
+                    Ke halaman Awal
+            </button>
+        </form>
+
+    {% endblock %}
+</body>
+</html>

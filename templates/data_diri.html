@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>{% block title %}Profile{% endblock %}</h1>
+</head>
+<body>
+    {% block content %}
+    <p align="center" size="12pt">Silakan cek data diri anda</p>
+    <form action="/save_profile" method="POST">
+        <table align="center">
+            <tr align="left">
+                <td>Gender</td>
+                <td>:</td>
+                <td>
+                   {{ data[5] }}
+                </td>
+            </tr>
+            <tr align="left">
+                <td>Memiliki komputer</td>
+                <td>:</td>
+                <td>
+                    {{ data[0] }}
+                </td>
+            </tr>
+            <tr align="left">
+                <td>Akses internet memadai</td>
+                <td>:</td>
+                <td>
+                    {{ data[1] }}
+                </td>
+            </tr>
+            <tr align="left">
+                <td>Bekerja dan sekolah</td>
+                <td>:</td>
+                <td>
+                    {{ data[2] }}
+                </td>
+            </tr>
+            <tr align="left">
+                <td>Menerima bantuan sosial</td>
+                <td>:</td>
+                <td>
+                    {{ data[3] }}
+                </td>
+            </tr>
+            <tr align="left">
+                <td>Tinggal di rumah subdisi</td>
+                <td>:</td>
+                <td>
+                    {{ data[4] }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-secondary" value="submit">
+                        Submit
+                    </button> 
+                </td>
+            </form>
+                <td> </td>
+            <form action="/" method="post">  
+                <td>          
+                    <button type="submit" class="btn btn-secondary" value="back">
+                        Ulang
+                    </button>
+                </td>
+            </form>
+            </tr>
+        </table>  
+    {% endblock %}
+</body>
+</html>
